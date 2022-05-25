@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Calculator create by JavaScript</h1>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" placeholder="0" id="output-sceen">
+            <button onclick="Clear()">Cl</button>
+            <button onclick="del()">DEL</button>
+            <button onclick="display('%')">%</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="Calculate()" class="equal">=</button>
+        </div>
+    </div>
+    <script>
+        let outputSceen = document.getElementById('output-sceen');
+
+        function display(num) {
+            outputSceen.value += num;
+        }
+
+        function Calculate() {
+            try {
+                outputSceen.value = eval(outputSceen.value);
+            } catch (err) {
+                alert("Invalid");
+            }
+        }
+
+        function Clear() {
+            outputSceen.value = "";
+        }
+
+        function del() {
+            outputSceen.value = outputSceen.value.slice(0, -1);
+        }
+    </script>
+</body>
+
+</html>
